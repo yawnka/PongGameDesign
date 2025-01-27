@@ -59,7 +59,7 @@ func _process(delta):
 		# Update ball position
 		ball.set_position(ball_pos)
 	
-	# Move paddles (unchanged from your original code)
+	# Move paddles
 	var left_pos = get_node("left").get_position()
 	if left_pos.y > 0 and Input.is_action_pressed("left_move_up"):
 		left_pos.y -= PAD_SPEED * delta
