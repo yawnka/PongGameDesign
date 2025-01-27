@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwwpve187iohm"]
+
+[ext_resource type="Texture2D" uid="uid://d0hxg3b4iy813" path="res://pong_assets/left_pallete.png" id="1_fvlsg"]
+[ext_resource type="Script" path="res://pong.gd" id="1_u1bbf"]
+[ext_resource type="Texture2D" uid="uid://c41lmgp32bijp" path="res://pong_assets/right_pallete.png" id="2_bfqe5"]
+[ext_resource type="Texture2D" uid="uid://dbngnbseg1mdl" path="res://pong_assets/separator.png" id="3_egj1m"]
+[ext_resource type="Texture2D" uid="uid://6f1ki0j8gnrp" path="res://pong_assets/ball.png" id="4_rh8nh"]
+
+[sub_resource type="GDScript" id="GDScript_fjfqm"]
+script/source = "extends Sprite2D
+
+# Properties for the ball
+var direction = Vector2(1.0, 0.0)
+var speed = 80.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_u1bbf")
+
+[node name="left" type="Sprite2D" parent="."]
+position = Vector2(25, 183)
+texture = ExtResource("1_fvlsg")
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(577, 187)
+texture = ExtResource("2_bfqe5")
+
+[node name="separator" type="Sprite2D" parent="."]
+position = Vector2(320, 200)
+texture = ExtResource("3_egj1m")
+
+[node name="ball" type="Sprite2D" parent="."]
+position = Vector2(320, 188)
+texture = ExtResource("4_rh8nh")
+script = SubResource("GDScript_fjfqm")
